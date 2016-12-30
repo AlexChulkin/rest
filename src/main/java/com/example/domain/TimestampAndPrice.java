@@ -13,6 +13,8 @@ public class TimestampAndPrice {
     private Instant timestamp;
     private BigDecimal price;
 
+    public TimestampAndPrice() {}
+
     public TimestampAndPrice(Instant timestamp, BigDecimal price) {
         this.timestamp = timestamp;
         this.price = price;

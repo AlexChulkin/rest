@@ -13,6 +13,8 @@ public final class NameAndPrice {
     private String name;
     private BigDecimal price;
 
+    public NameAndPrice() {}
+
     public NameAndPrice(String name, BigDecimal price) {
         this.name = name;
         this.price = price;
