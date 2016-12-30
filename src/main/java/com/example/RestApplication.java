@@ -2,9 +2,6 @@ package com.example;
 
 import com.example.domain.Product;
 import com.example.domain.Products;
-import com.example.service.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.web.client.RestTemplate;
@@ -16,7 +13,8 @@ import java.time.format.DateTimeFormatter;
 
 @SpringBootApplication
 public class RestApplication {
-		private static final String URL_FIND_PRODUCTS_BY_PRODUCT_NAME =
+
+	private static final String URL_FIND_PRODUCTS_BY_PRODUCT_NAME =
 				"http://localhost:8080/restful/product/pn/{pn}";
 		private static final String URL_FIND_PRODUCTS_BY_TIMESTAMP =
 				"http://localhost:8080/restful/product/ts/{ts}";
