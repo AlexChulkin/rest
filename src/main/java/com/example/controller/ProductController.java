@@ -20,7 +20,7 @@ import java.time.Instant;
 @Controller
 @RequestMapping(value="/product")
 public class ProductController {
-    final Logger logger = LoggerFactory.getLogger(ProductController.class);
+    private final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
     @Autowired
     private ProductService productService;
@@ -45,7 +45,7 @@ public class ProductController {
         return result;
     }
 
-    @RequestMapping(value="/id", method=RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Product findProductById(@PathVariable("id")  long id) {
         logger.info("Finding product by id: " + id);
@@ -56,7 +56,7 @@ public class ProductController {
 
     @RequestMapping(value="/", method=RequestMethod.POST)
     @ResponseBody
-    public Product create( @Valid @RequestBody Product product) {
+    public Product create(@Valid @RequestBody Product product) {
         logger.info("Creating product: " + product);
         productService.saveProduct(product);
         logger.info("Successfully created product: " + product);

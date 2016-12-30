@@ -3,15 +3,12 @@ package com.example.domain;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.Instant;
 import java.time.Instant;
 
 /**
@@ -36,7 +33,6 @@ public class Product implements Serializable {
     private int version;
     private long id;
 
-    @NotNull
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "\"Id\"", length = 11)
@@ -48,7 +44,8 @@ public class Product implements Serializable {
         this.id = id;
     }
 
-    @NotBlank
+    @NotNull(message = "error.productName.notNull")
+    @Size(min = 1, max = 60, message = "error.productName.size")
     @Column(name = "\"Product name\"")
     public String getProductName() {
         return productName;
@@ -58,7 +55,7 @@ public class Product implements Serializable {
         this.productName = name;
     }
 
-    @NotNull
+    @NotNull(message = "error.timestamp.notNull")
     @Column(name = "\"Timestamp\"")
     public Instant getTimestamp() {
         return timestamp;
@@ -68,7 +65,7 @@ public class Product implements Serializable {
         this.timestamp = timestamp;
     }
 
-    @NotNull
+    @NotNull(message = "error.price.notNull")
     @Column(name = "\"Price\"")
     public BigDecimal getPrice() {
         return price;
