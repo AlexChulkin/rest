@@ -1,6 +1,6 @@
 <mapping>
     <class name="com.example.domain.Products">
-        <field name="nameAndPriceList" type="com.example.domain.NameAndPrice" collection="linkedlist">
+        <field name="nameAndPriceList" type="com.example.domain.NameAndPrice" collection="arraylist">
             <bind-xml name="nameAndPrice"/>
         </field>
         <field name="timestampAndPriceList" type="com.example.domain.TimestampAndPrice" collection="arraylist">
@@ -30,6 +30,6 @@
 
 
     <field-handler name="dateHandler" class="com.example.handler.DateTimeFieldHandler">
-        <param name="date-time-format" value="yyyy-MM-dd'T'hh:mm:ssX"/>
+        <param name="date-time-format" value="yyyy-MM-dd hh:mm:ss"/>
     </field-handler>
 </mapping>

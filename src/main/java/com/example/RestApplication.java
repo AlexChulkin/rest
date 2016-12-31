@@ -2,9 +2,6 @@ package com.example;
 
 import com.example.domain.Product;
 import com.example.domain.Products;
-import com.example.service.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.web.client.RestTemplate;

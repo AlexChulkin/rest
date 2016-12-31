@@ -13,7 +13,8 @@ import java.util.List;
 public interface ProductService {
     List<TimestampAndPrice> findProductsByProductName(String productName);
     List<NameAndPrice> findProductsByTimestamp(Instant timestamp);
-    Product findProductById(long productId);
+
+    Product findProductById(Long productId);
     Product saveProduct(Product product);
     void deleteProduct(Product product);
 }

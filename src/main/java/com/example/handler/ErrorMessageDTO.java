@@ -4,14 +4,14 @@ package com.example.handler;
 /**
  * Created by alexc_000 on 2016-12-30.
  */
-class MessageDTO {
+class ErrorMessageDTO {
     private String message;
-    private MessageType type;
+    private ErrorMessageType type;
 
-    public MessageDTO() {
+    public ErrorMessageDTO() {
     }
 
-    MessageDTO(MessageType type, String message) {
+    ErrorMessageDTO(ErrorMessageType type, String message) {
         this.message = message;
         this.type = type;
     }
@@ -20,7 +20,7 @@ class MessageDTO {
         return message;
     }
 
-    public MessageType getType() {
+    public ErrorMessageType getType() {
         return type;
     }
 }

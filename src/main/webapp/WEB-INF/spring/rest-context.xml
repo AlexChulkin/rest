@@ -24,6 +24,9 @@
 
     <context:component-scan base-package="com.example"/>
 
+    <bean id="methodValidationPostProcessor"
+          class="org.springframework.validation.beanvalidation.MethodValidationPostProcessor"/>
+
     <bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
         <property name="mappingLocation" value="classpath:META-INF/spring/oxm-mapping.xml"/>
     </bean>

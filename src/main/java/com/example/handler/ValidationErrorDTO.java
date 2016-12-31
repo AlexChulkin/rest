@@ -8,17 +8,24 @@ import java.util.List;
  */
 class ValidationErrorDTO {
 
-    private List<MessageDTO> fieldErrors = new LinkedList<>();
+    private List<ErrorMessageDTO> fieldErrors = new LinkedList<>();
 
     ValidationErrorDTO() {
-
     }
 
-    void addErrorMessage(MessageDTO messageDTO) {
-        fieldErrors.add(messageDTO);
+    ValidationErrorDTO(ErrorMessageDTO ErrorMessageDTO) {
+        fieldErrors.add(ErrorMessageDTO);
     }
 
-    public List<MessageDTO> getFieldErrors() {
+    ValidationErrorDTO(List<ErrorMessageDTO> fieldErrors) {
+        this.fieldErrors.addAll(fieldErrors);
+    }
+
+    void addErrorMessage(ErrorMessageDTO ErrorMessageDTO) {
+        fieldErrors.add(ErrorMessageDTO);
+    }
+
+    public List<ErrorMessageDTO> getFieldErrors() {
         return fieldErrors;
     }
 }

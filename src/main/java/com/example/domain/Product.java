@@ -1,8 +1,10 @@
 package com.example.domain;
 
 
+import com.example.handler.DateTimeFieldHandler;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -23,7 +25,7 @@ import java.time.Instant;
                         "FROM Product p WHERE p.timestamp = :timestamp"),
 })
 @Entity
-@Table(name = "product")
+@Table(name = "product", uniqueConstraints = @UniqueConstraint(columnNames = {"\"Product name\"", "\"Timestamp\""}))
 public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -57,6 +59,7 @@ public class Product implements Serializable {
 
     @NotNull(message = "error.timestamp.notNull")
     @Column(name = "\"Timestamp\"")
+    @DateTimeFormat(pattern = DateTimeFieldHandler.dateFormatPattern)
     public Instant getTimestamp() {
         return timestamp;
     }

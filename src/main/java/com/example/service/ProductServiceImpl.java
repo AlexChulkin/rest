@@ -4,7 +4,6 @@ import com.example.domain.NameAndPrice;
 import com.example.domain.Product;
 import com.example.domain.TimestampAndPrice;
 import com.example.repository.ProductRepository;
-import jersey.repackaged.com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -47,7 +46,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product findProductById(long productId) {
+    public Product findProductById(Long productId) {
         return productRepository.findOne(productId);
     }
 
